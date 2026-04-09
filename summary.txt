@@ -1,0 +1,20 @@
+TASK 2 – Recommender System: Summary
+
+Dataset rows used: 200000
+Train/Test split: 80/20
+
+Cross-Validation (5-fold):
+  Best model: SVD
+  RMSE (mean): 0.8662 ± 0.0044
+  MAE (mean):  0.6634 ± 0.0029
+
+Held-out Test:
+  Best model: SVD
+  RMSE: 0.8596
+  MAE:  0.6585
+
+Notes:
+- UserCF vs ItemCF: different similarity measures (cosine, MSD, Pearson) can shift performance.
+- SVD is MF with biases; PMF is SVD with biased=False (pure matrix factorization).
+- With very large data, try running with a sample (N_ROWS) first, then scale up.
+- Lower RMSE/MAE is better.
